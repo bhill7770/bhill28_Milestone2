@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <style>
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 23px 20px;
+      text-decoration: none;
+      font-size: 25px;
+      font-family: cursive;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      color: white;
+    }
+  </style>
+  <header class="site-header">
+    <nav class="topnav">
+      <div class="container">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="/">Home</a>
+          <a class="nav-item nav-link" href="/search">Search</a>
+        </div>
+        <!-- Navbar Right Side -->
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/login">Login</a>
+          <a class="nav-item nav-link" href="/register">Register</a>
+          <a class="nav-item nav-link" href="/trivia">Trivia</a>
+          <a class="nav-item nav-link" href="/trailers">Trailers</a>
+          <a class="nav-item nav-link" href="/logout">Logout</a>
+        </div>
+      </div>
+      </div>
+    </nav>
+    <style>
+      body {
+        background-color: lightgray;
+        text-align: center;
+        font-size: 50px;
+        color: rgb(199, 158, 172);
+        -webkit-text-stroke: 0.8px black;
+      }
+
+      .imgcontainer {
+        text-align: center;
+        margin: 20px 0 12px 0;
+      }
+
+      img.avatar {
+        border: 11px solid black;
+        align-items: center;
+      }
+    </style>
+
+<body>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for msg in messages %}
+  <p><span style="color: grey;">{{msg}}</span></p>
+  {% endfor%}
+  {% endif %}
+  {% endwith %}
+</body>
+<p> Search For a Film </p>
+<div class="imgcontainer">
+  <img src="/static/production.jpeg" alt="production film" class="avatar" width="200" height="150">
+</div>
+<a style="color:grey;font-size:27px;">Find what you're looking for...</a>
+<form id="form" role="search">
+  <input style="font-size: large;" type="search" id="query" class="searchbar" size="50"
+    placeholder="Search for your favorite movies, genres, etc..." timesnewroman-label="Search through site content">
+  <style>
+    .searchbar {
+      width: 400px;
+    }
+  </style>
+  <br>
+  <button style="font-size:23px;">Search</button>
+</form>
+
+</head>
