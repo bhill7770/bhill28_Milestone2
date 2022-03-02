@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html>
+<form action="/html/tags/html_form_tag_action.cfm" method="post">
+</form>
+
+<head>
+  <style>
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 23px 20px;
+      text-decoration: none;
+      font-size: 25px;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      color: white;
+    }
+  </style>
+  <header class="site-header">
+    <nav class="topnav">
+      <div class="container">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="/">Home</a>
+          <a class="nav-item nav-link" href="/search">Search</a>
+        </div>
+        <!-- Navbar Right Side -->
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/login">Login</a>
+          <a class="nav-item nav-link" href="/register">Register</a>
+          <a class="nav-item nav-link" href="/trivia">Trivia</a>
+          <a class="nav-item nav-link" href="/trailers">Trailers</a>
+          <a class="nav-item nav-link" href="/logout">Logout</a>
+        </div>
+      </div>
+      </div>
+    </nav>
+  </header>
+  <style>
+    body {
+      background-color: lightgray;
+      text-align: center;
+      font-size: 50px;
+      font-family: cursive;
+      color: rgb(199, 158, 172);
+      -webkit-text-stroke: 0.5px black;
+    }
+
+    h1 {
+      -webkit-text-stroke: 2px black;
+    }
+
+    h2 {
+      font-size: 39px;
+      font-family: 'Times New Roman', Times, serif;
+      -webkit-text-stroke: 1.15px darkslategrey;
+    }
+
+    p {
+      font-size: 35px;
+      font-family: 'Times New Roman', Times, serif;
+      -webkit-text-stroke: 1.2px black;
+    }
+
+    img {
+      position: center;
+      border: 5px solid black;
+    }
+
+    input {
+      width: 300px;
+      height: 40px;
+    }
+
+    a {
+      font-size: 30px;
+    }
+  </style>
+
+<body>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for msg in messages %}
+  <p><span style="color: grey; font-size: 20px;">{{msg}}</span></p>
+  {% endfor%}
+  {% endif %}
+  {% endwith %}
+  <h1> Top Flick Picks </h1>
+  <p> It's showtime ladies & gents! </p>
+  <ol>
+    <img src="/static/movie.jpeg" alt="movie clipart" width="500" height="500">
+  </ol>
+  <p><span style="color:black"> 🎬 • Movie Recommendations of Highly Watched Films • 🎬 </span></p>
+  <br>
+  <br>
+  <h2 span style="color:grey"> Refresh Page to View Different Feature Films to Choose From </span></h2>
+  <ol>
+    <img src="/static/movie_ticket.jpeg" alt="movie ticket clipart" width="400" height="200">
+  </ol>
+  <br>
+  <p> The Featured Films: </p>
+  <br>
+  {% for pop_movie in data["results"]%}
+  <h3><span style="color:black">•</span> {{pop_movie.title}} <span style="color:black">•</span> </h3>
+  <img src="https://image.tmdb.org/t/p/original/{{pop_movie.poster_path}}" alt="Movie Poster" width="700" height="900">
+  <p><span style="color:slategray"> Overview: </span> {{pop_movie.overview}}</p>
+  <p><span style="color:slategray"> ○ Genres: </span> {{pop_movie.genre_ids}}</p>
+  <p><span style="color:slategray"> ○ Release Date: </span> {{pop_movie.release_date}}</p>
+  <p><span style="color:slategray"> ○ Average Voter Rating: </span> {{pop_movie.vote_average}} /10 ☆</p>
+  <p><span style="color:slategray"> ○ Movie ID: </span> {{pop_movie.id}}</p>
+  <a href="https://en.wikipedia.org/wiki/{{pop_movie.title}}" target="__">Link to Film's Wikimedia Page</a>
+  <br>
+  <br>
+  <p><span style="color:white">♦ ♦ ♦</p></span>
+  <p style="font-size: 40px;">See What Others Had to Say 💬 </p>
+  <a style="color: black; font-family: Georgia; font-size:25px;">Viewer Responses:</a>
+  <style>
+    hr {
+      width: 80%;
+    }
+  </style>
+  <form action="/home" method="POST">
+    <label style="font-size:25px; color: black; font-family: Georgia;" for="name"> Name:</label>
+    <input type="text" id="name" name="name" value="{{name if name}}" /><br>
+    <label style="font-size:25px; color: black; font-family: Georgia;" for="movieID">Movie ID: </label>
+    <input type="text" placeholder="{{pop_movie.id}}" id="movieID" name="movieID" readonly
+      value="{{movieID if movieID}}" /><br>
+    <label style="font-size:25px; color: black; font-family: Georgia;" for="movieRating">Rate the Movie: </label>
+    <input type="text" id="movieRating" placeholder="Enter a value 1 to 10" name="movieRating"
+      value="{{movieRating if movieRating}}" />
+    <br>
+    <textarea value="{{comments if comments}}" type="comments" name="comments" id="comments"
+      style="font-size:30px; font-family: monospace; color: gray;"> Leave a comment about the movie!
+    </textarea>
+    <br>
+    <button class="button" value="Submit" type="submit">Submit</button>
+  </form>
+  <style>
+    .button {
+      height: 40px;
+      width: 100px;
+    }
+  </style>
+  <br>
+  <br>
+  <hr>
+  <br>
+  <br>
+  {%endfor%}
+  <br>
+  <p> ♦ <span style="color:black">For reference regarding genre IDs</span> - <span
+      style="color:slategray">Action:</span> 28, <span style="color:slategray">Adventure:</span> 12, <span
+      style="color:slategray">Animation:</span> 16, <span style="color:slategray">Comedy:</span> 35,
+    <span style="color:slategray">Crime:</span> 80, <span style="color:slategray">Documentary:</span> 99, <span
+      style="color:slategray">Drama:</span> 18, <span style="color:slategray">Family:</span> 10751, <span
+      style="color:slategray">Fantasy:</span> 14, <span style="color:slategray">History:</span> 36, <span
+      style="color:slategray">Horror:</span> 27,
+    <span style="color:slategray">Music:</span> 10402, <span style="color:slategray">Mystery:</span> 9648, <span
+      style="color:slategray">Romance:</span> 10749, <span style="color:slategray">Sci-Fi:</span> 878, <span
+      style="color:slategray">TV-Movie:</span> 10770, <span style="color:slategray">Thriller:</span> 53, <span
+      style="color:slategray">War:</span> 10752, <span style="color:slategray">Western:</span> 37
+  </p>
+  <br>
+
+  <body>
+    <br>
+    <br>
+    <p>Don't forget to grab a drink & some popcorn on your way out!!</p>
+    <img src="/static/pop.jpeg" alt="popcorn and drink clipart" width="300" height="300">
+  </body>
+  </head>
+
+</html>
