@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta http-equiv="pragma" content="no-cache" />
+  <meta http-equiv="expires" content="-1" />
+  <link rel="stylesheet" href="/static/style2.css" />
+  <style>
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 23px 20px;
+      text-decoration: none;
+      font-size: 25px;
+      font-family: cursive;
+
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      color: white;
+    }
+  </style>
+  <header class="site-header">
+    <nav class="topnav">
+      <div class="container">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="/">Home </a>
+          <a class="nav-item nav-link" href="/search">Search</a>
+        </div>
+        <!-- Navbar Right Side -->
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/login">Login</a>
+          <a class="nav-item nav-link" href="/register">Register</a>
+          <a class="nav-item nav-link" href="/trivia">Trivia</a>
+          <a class="nav-item nav-link" href="/trailers">Trailers</a>
+          <a class="nav-item nav-link" href="/logout">Logout</a>
+        </div>
+      </div>
+      </div>
+    </nav>
+  </header>
+  </style>
+  <style>
+    img.avatar {
+
+      border: 11px solid black;
+      position: relative;
+    }
+
+    form {
+      border: 3px solid #928b8b;
+    }
+
+    input[type=text] {
+      width: 400px;
+      height: fit-content;
+      padding: 2px 20px;
+      margin: 8px 0;
+      display: inline-block;
+      border: 1px solid #ccc;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: lightgray;
+      text-align: center;
+      font-size: 25px;
+      color: rgb(199, 158, 172);
+      -webkit-text-stroke: 0.9px black;
+    }
+
+    table {
+      font-family: Georgia, 'Times New Roman', Times, serif, Helvetica, sans-serif;
+      font-size: 100%;
+      font-weight: bold;
+    }
+
+    h1 {
+      font-family: Georgia;
+    }
+
+    button {
+      background-color: black;
+      color: white;
+      padding: 15px 20px;
+      margin: 7px 0;
+      border: none;
+      cursor: pointer;
+      width: 20%;
+    }
+
+    button:hover {
+      opacity: 0.8;
+    }
+
+    .imgcontainer {
+      text-align: center;
+      margin: 20px 0 12px 0;
+    }
+
+    span.psw {
+      float: right;
+      padding-top: 16px;
+    }
+
+    @media screen and (max-width: 400px) {
+      span.psw {
+        display: block;
+        float: none;
+      }
+
+      .create_acc_btn {
+        width: 100%;
+      }
+    }
+  </style>
+
+<body>
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for msg in messages %}
+  <p><span style="color: grey;">{{msg}}</span></p>
+  {% endfor%}
+  {% endif %}
+  {% endwith %}
+</body>
+<title>Register</title>
+<h1><span style="color: rgb(199, 158, 172)"> Sign Up</span></h1>
+</head>
+
+<body>
+  <form action="/register" method="POST">
+    <div class="imgcontainer">
+      <img src="/static/avatar.png" alt="Avatar" class="avatar" width="150">
+      <br>
+    </div>
+    <table>
+      <tr>
+        <div class="container">
+          <label for="email" style="color:grey;font-size:30px;"><b>Email</b></label>
+          <input type=”email” placeholder="Enter Email" name="email" required style="font-size:23px;"
+            value="{{email if email}}">
+          <br>
+          <br>
+          <label for="password" style="color:grey;font-size:30px;"><b>Password</b></label>
+          <input type="password" placeholder="Enter Password" name="password" required style="font-size:23px;"
+            value="{{password if password}}">
+          <div class="container">
+            <br>
+            <button type="submit">CREATE ACCOUNT</button>
+          </div>
+    </table>
+    <br>
+  </form>
+  <p style="color:grey;font-size:40px;">Welcome!</p>
+  <p style="color:black;font-size:25px;">Time to join the film fanatics club...</p>
+  <div class="imgcontainer">
+    <img src="/static/lights_camera_action.png" alt="cinema" class="avatar" width="400" height="200">
+  </div>
+</body>
+
+</html>
