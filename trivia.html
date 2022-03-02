@@ -1,0 +1,669 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        .topnav {
+            overflow: hidden;
+            background-color: #333;
+        }
+
+        .topnav a {
+            float: left;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 23px 20px;
+            text-decoration: none;
+            font-size: 25px;
+            font-family: cursive;
+        }
+
+        .topnav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .topnav a.active {
+            color: white;
+        }
+
+        img.avatar {
+            border: 5px solid black;
+            position: relative;
+        }
+
+        hr {
+            width: 80%;
+            color: black;
+        }
+    </style>
+    <header class="site-header">
+        <nav class="topnav">
+            <div class="container">
+                <div class="navbar-nav mr-auto">
+                    <a class="nav-item nav-link" href="/">Home </a>
+                    <a class="nav-item nav-link" href="/search">Search</a>
+                </div>
+                <!-- Navbar Right Side -->
+                <div class="navbar-nav">
+                    <a class="nav-item nav-link" href="/login">Login</a>
+                    <a class="nav-item nav-link" href="/register">Register</a>
+                    <a class="nav-item nav-link" href="/trivia">Trivia</a>
+                    <a class="nav-item nav-link" href="/trailers">Trailers</a>
+                    <a class="nav-item nav-link" href="/logout">Logout</a>
+                </div>
+            </div>
+            </div>
+        </nav>
+    </header>
+    </style>
+    <style>
+        body {
+            background-color: lightgray;
+            text-align: center;
+            font-size: 25px;
+            color: rgb(199, 158, 172);
+            -webkit-text-stroke: 0.9px black;
+        }
+
+        .MOVIE_QUESTIONS {
+            text-align: left;
+        }
+
+        .MOVIE_ANSWERS {
+            text-align: left;
+        }
+    </style>
+
+<body>
+    {% with messages = get_flashed_messages() %}
+    {% if messages %}
+    {% for msg in messages %}
+    <p>{{msg}}</p>
+    {% endfor%}
+    {% endif %}
+    {% endwith %}
+</body>
+<h1 style="font-size: 200;">It's Movie Trivia Time!</h1>
+<a><span style="color:grey; font-size: 30px;">Here's a list of 75 Questions from the most popular movies of all
+        time...</span></a><br>
+<a><span style="color:black">Test your knowledge before checking the answers below!</span></a><br><br>
+<br><br><br>
+<img src="/static/question_mark.png" alt="question_mark" class="avatar" width="150">
+<br><br><br><br><br><br><br>
+<div class="MOVIE_QUESTIONS">
+    <a>♦ <span style="color:grey">QUESTION #1:</span> <span style="color:black">Who played Mrs. Robinson in The
+            Graduate?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #2:</span> <span style="color:black">Near the end of Vertigo, when Judy
+            transforms into Madeline, she is bathed in what color light?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #3:</span> <span style="color:black"> For what movie did Tom Hanks score his
+            first Academy Award nomination?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #4:</span> <span style="color:black">What pop vocal group performs at the
+            wedding in Bridesmaids?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #5:</span> <span style="color:black">What flavor of Pop Tarts does Buddy the
+            Elf use in his spaghetti in Elf? </span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #6:</span> <span style="color:black">Which 1948 Alfred Hitchcock movie
+            starred James Stewart and was shot to look like one continuous take?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #7:</span> <span style="color:black">Who played iconic femme fatale Phyllis
+            Dietrichson in classic 1946 film noir Double Indemnity?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #8:</span> <span style="color:black">Who is the only actor to receive an
+            Oscar nomination for acting in a Lord of the Rings movie?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #9:</span> <span style="color:black">WIn Apocalypse Now, Robert Duvall says,
+            “I love the smell of _____ in the morning.”</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #10:</span> <span style="color:black">What was Quentin Tarantino's first
+            feature as writer/director?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #11:</span> <span style="color:black">Which movie star is killed off in the
+            opening scene of Scream?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #12:</span> <span style="color:black">In what 1950 drama does Bette Davis
+            say, “Fasten your seatbelts; it's going to be a bumpy night”?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #13:</span> <span style="color:black">What infamous 1980 box-office bomb
+            ruined the career of The Deer Hunter director Michael Cimino?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #14:</span> <span style="color:black">The head of what kind of animal is
+            front-and-center in an infamous scene from The Godfather</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #15:</span> <span style="color:black">What are the dying words of Charles
+            Foster Kane in Citizen Kane?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #16:</span> <span style="color:black">Which famous film composer wrote the
+            music for Tim Burton's 1989 Batman?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #17:</span> <span style="color:black">What is the name of the spaceship in
+            Alien?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #18:</span> <span style="color:black"> What was Audrey Hepburn's birth
+            name?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #19:</span> <span style="color:black">Joaquin Phoenix received his first
+            Oscar nomination for playing Roman emperor Commodus in what 2000 Oscar-winning epic?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #20:</span> <span style="color:black"> What 1970 movie marked the feature
+            debut of Arnold Schwarzenegger?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #21:</span> <span style="color:black">What is the name of Riley's imaginary
+            friend in Inside Out?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #22:</span> <span style="color:black">What is the name of the extended ballet
+            sequence near the end of Singin' in the Rain?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #23:</span> <span style="color:black">What is the highest-grossing movie of
+            all time when taking inflation into account?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #24:</span> <span style="color:black">Where was the Lord of the Rings movies
+            filmed?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #25:</span> <span style="color:black">How many Oscars has Meryl Streep been
+            nominated for?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #26:</span> <span style="color:black"> In what 1976 thriller does Robert De
+            Niro famously say “You talkin' to me?”</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #27:</span> <span style="color:black"> What is the name of the courtesan
+            played by Nicole Kidman in Moulin Rouge! </span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #28:</span> <span style="color:black"> What's the name of the anthemic dance
+            near the beginning of The Rocky Horror Picture Show?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #29:</span> <span style="color:black">What is the highest-grossing R-rated
+            movie of all time?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #30:</span> <span style="color:black">For which 1964 musical blockbuster did
+            Julie Andrews win the Academy Award for Best Actress?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #31:</span> <span style="color:black">What is the first movie ever to be
+            rated PG-13?</span> </a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #32:</span> <span style="color:black">What's the name of John Wayne's
+            character in True Grit (played by Jeff Bridgesin the remake)?</span> </a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #33:</span> <span style="color:black"> Who played Bonnie Parker and Clyde
+            Barrow in Bonnie & Clyde?</span> </a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #34:</span> <span style="color:black">What 1994 crime film revitalized John
+            Travolta's career?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #35:</span> <span style="color:black">“Well, nobody's perfect” is the final
+            line (and punchline) from what classic 1959 comedy starring Marilyn Monroe?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #36:</span> <span style="color:black">Jennifer Lawrence won a Best Actress
+            Academy Award for what 2012 romantic comedy/drama?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #37:</span> <span style="color:black">In the action thriller Speed, why is
+            Annie (Sandra Bullock)'s driver's license suspended?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #38:</span> <span style="color:black"> Which Alfred Hitchcock thriller is
+            notorious for its shocking “shower scene”?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #39:</span> <span style="color:black">Who wrote the screenplay for
+            Rocky?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #40:</span> <span style="color:black">What is the highest-grossing
+            foreign-language film at the U.S. box office?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #41:</span> <span style="color:black">Who voiced the sultry Jessica Rabbit in
+            Who's Afraid of Roger Rabbit? span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #42:</span> <span style="color:black">The stage play Everybody Comes to
+            Rick's was adapted for the screen to become what 1942 Best Picture winner?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #43:</span> <span style="color:black">Which movie was incorrectly announced
+            as the winner of Best Picture at the 2017 Academy Awards, during the greatest Oscars flub of all
+            time?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #44:</span> <span style="color:black">What prominent American director won an
+            Oscar for helming Forrest Gump?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #45:</span> <span style="color:black">What is the real name of Uma Thurman's
+            “The Bride” character from Kill Bill?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #46:</span> <span style="color:black">What actress' name, who voices Princess
+            Elsa in the Frozen films, did John Travolta botch at the 2014 Oscars?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #47:</span> <span style="color:black">What real-life on-again off-again
+            Hollywood power couple starred in the film Who's Afraid of Virginia Woolf?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #48:</span> <span style="color:black">Who played Juror Number 8 in 12 Angry
+            Men?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #49:</span> <span style="color:black">What American writer/director starred
+            in several iconic European-produced “Spaghetti Westerns“?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #50:</span> <span style="color:black">What shocking Wes Craven horror movie
+            carried the marketing tagline, “To avoid fainting, keep repeating, 'It's only a movie…'”?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #51:</span> <span style="color:black">Marlon Brando “could have been a
+            contender” in what iconic 1954 crime drama?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #52:</span> <span style="color:black">Who directed Boris Karloff in the
+            classics Frankenstein and Bride of Frankenstein?</span> </a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #53:</span> <span style="color:black">What famous L.A. landmark is heavily
+            featured in Rebel Without a Cause?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #54:</span> <span style="color:black">What words are written on the knuckles
+            of “Reverend” Harry Powell (Robert Mitchum) in The Night of the Hunter?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #55:</span> <span style="color:black">The theme from The Third Man (also
+            called “The Harry Lime Theme” was performed on what instrument?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #56:</span> <span style="color:black">What TV show was Jack Nicholson
+            referencing when he ad-libbed “Here's Johnny!” in The Shining?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #57:</span> <span style="color:black">Who played park owner John Hammond in
+            Jurassic Park?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #58:</span> <span style="color:black">What critically panned 1984
+            country-musical comedy starring Dolly Parton and Sylvester Stallone eventually became a cult
+            classic?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #59:</span> <span style="color:black">What 1927 musical was the first
+            “talkie”?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #60:</span> <span style="color:black">What's the name of the skyscraper in
+            Die Hard?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #61:</span> <span style="color:black">What score did Elle Woods get on her
+            LSAT in Legally Blonde?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #62:</span> <span style="color:black">Aaron Sorkin won an Oscar for writing
+            what 2010 drama about the creation of Facebook?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #63:</span> <span style="color:black"> What is the model of revolver made
+            famous by Clint Eastwood's “Dirty” Harry Callahan?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #64:</span> <span style="color:black">Three of Jim Carrey's blockbusters—The
+            Mask, Dumb and Dumber and Ace Ventura: Pet Detective—were all released in what year?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #65:</span> <span style="color:black">What movie holds the record for most
+            Oscar wins without winning Best Picture (eight wins total)?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #66:</span> <span style="color:black">How many suns does Luke's home planet
+            of Tatooine have in Star Wars?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #67:</span> <span style="color:black"> In what 1969 James Bond thriller does
+            the famous spy fall in love and get married?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #68:</span> <span style="color:black">What was the top-grossing movie of
+            2014?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #69:</span> <span style="color:black"> What's the fictional brand of
+            cigarettes in Quentin Tarantino's movies?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #70:</span> <span style="color:black">Who played the Wicked Witch of the West
+            in The Wizard of Oz?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #71:</span> <span style="color:black">What is the highest-grossing war movie
+            of all time and Clint Eastwood's highest-grossing movie ever?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #72:</span> <span style="color:black">How many Oscars has Meryl Streep
+            won?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #73:</span> <span style="color:black">Who played detective Rick Deckard in
+            Blade Runner?</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #74:</span> <span style="color:black">This acclaimed, Oscar-winning filmmaker
+            directed Happy Feet, Babe: Pig in the City and Mad Max: Fury Road.</span></a>
+    <br><br>
+    <a>♦ <span style="color:grey">QUESTION #75:</span> <span style="color:black">Only three movies in history have won
+            the “big five” at the Oscars (Best Picture, Best Director, Best Screenplay, Best Actor and Best Actress).
+            Name all of them.</span></a>
+    <br><br>
+
+</div>
+<br><br><br>
+<hr>
+<br>
+<h2 style="font-size: 40px;"> ✔️ <span style="color:grey">-</span> Check Your Answers! </h2>
+<a> <span style="color:grey; font-size: 24px;">See what questions you got right...</span></a>
+<br><br><br><br>
+<div class="MOVIE_ANSWERS">
+    <a>♢ <span style="color:grey">ANSWER #1:</span> <span style="color:black">Anne Bancroft</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #2:</span> <span style="color:black">Green</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #3:</span> <span style="color:black">Big</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #4:</span> <span style="color:black">Wilson Phillips</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #5:</span> <span style="color:black">Chocolate</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #6:</span> <span style="color:black">Rope</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #7:</span> <span style="color:black">Barbara Stanwyck</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #8:</span> <span style="color:black">Ian McKellen</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #9:</span> <span style="color:black">Napalm</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #10:</span> <span style="color:black">Reservoir Dogs </span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #11:</span> <span style="color:black">Drew Barrymore</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #12:</span> <span style="color:black">All About Eve </span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #13:</span> <span style="color:black">Heaven's Gate</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #14:</span> <span style="color:black">Horse</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #15:</span> <span style="color:black">Rosebud</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #16:</span> <span style="color:black">Danny Elfman</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #17:</span> <span style="color:black">USCSS Nostromo</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #18:</span> <span style="color:black">Audrey Kathleen Ruston</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #19:</span> <span style="color:black">Gladiator</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #20:</span> <span style="color:black">Hercules in New York</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #21:</span> <span style="color:black">Bing Bong</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #22:</span> <span style="color:black">Broadway Melody</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #23:</span> <span style="color:black">Gone With the Wind</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #24:</span> <span style="color:black">New Zealand</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #25:</span> <span style="color:black">21</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #26:</span> <span style="color:black">Taxi Driver</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #27:</span> <span style="color:black">Satine</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #28:</span> <span style="color:black">“The Time Warp”</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #29:</span> <span style="color:black">Joker</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #30:</span> <span style="color:black">Mary Poppins</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #31:</span> <span style="color:black">Red Dawn (1984)</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #32:</span> <span style="color:black">Rooster Cogburn</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #33:</span> <span style="color:black">Faye Dunaway and Warren Beatty</span>
+    </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #34:</span> <span style="color:black">Pulp Fiction </span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #35:</span> <span style="color:black">Some Like it Hot </span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #36:</span> <span style="color:black">Silver Linings Playbook</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #37:</span> <span style="color:black">She was speeding </span>
+    </a><br><br>
+    <a>♢ <span style="color:grey">ANSWER #38:</span> <span style="color:black">Pyscho</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #39:</span> <span style="color:black">Sylvester Stallone</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #40:</span> <span style="color:black">Passion of the Christ</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #41:</span> <span style="color:black">Kathleen Turner</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #42:</span> <span style="color:black">Casablanca </span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #43:</span> <span style="color:black">La La Land</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #44:</span> <span style="color:black">Robert Zemeckist</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #45:</span> <span style="color:black">Beatrix Kiddo</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #46:</span> <span style="color:black">Idina Menzel</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #47:</span> <span style="color:black">Elizabeth Taylor and Richard
+            Burton</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #48:</span> <span style="color:black">Henry Fonda</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #49:</span> <span style="color:black">Clint Eastwood</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #50:</span> <span style="color:black">The Last House on the Left</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #51:</span> <span style="color:black">On the Waterfront</span> </a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #52:</span> <span style="color:black">James Whale</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #53:</span> <span style="color:black">Griffith Observatory</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #54:</span> <span style="color:black">“Love” and “hate.”</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #55:</span> <span style="color:black">Zither</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #56:</span> <span style="color:black">The Tonight Show Starring Johnny
+            Carson</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #57:</span> <span style="color:black">Richard Attenborough</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #58:</span> <span style="color:black">Rhinestone</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #59:</span> <span style="color:black">The Jazz Singer</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #60:</span> <span style="color:black">Nakatomi Plaza</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #61:</span> <span style="color:black">179</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #62:</span> <span style="color:black">The Social Network</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #63:</span> <span style="color:black">Smith & Wesson Model 29 .44
+            Magnum</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #64:</span> <span style="color:black">1994</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #65:</span> <span style="color:black">Cabaret</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #66:</span> <span style="color:black">Two</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #67:</span> <span style="color:black">On Her Majesty's Secret
+            Service</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #68:</span> <span style="color:black">Guardians of the Galaxy</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #69:</span> <span style="color:black">Red Apple cigarettes</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #70:</span> <span style="color:black">Margaret Hamilton</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #71:</span> <span style="color:black">American Sniper</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #72:</span> <span style="color:black">Three</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #73:</span> <span style="color:black">Harrison Ford</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #74:</span> <span style="color:black">George Miller</span></a>
+    <br><br>
+    <a>♢ <span style="color:grey">ANSWER #75:</span> <span style="color:black">It Happened One Night, One Flew Over the
+            Cuckoo's Nest and The Silence of the Lambs.</span></a>
+    <br><br>
+</div>
+<br><br><br>
+<hr>
+<h2 style="font-size: 40px;">How Many Did You Get Correct?</h2>
+<img src="/static/man_thinking.png" alt="man" class="avatar" width="220">
+<p><span style="color:red; font-size: 35px;"> ♦ HOT SEAT ZONE ♦ </span> </p>
+<p><span style="color:red; font-size: 32px;">0 - 25</span><span style="font-size: 32px; color: grey;"> Questions
+        Answered Right? </span> <br> <span style="color:black; font-size: 30px;">Well, At Least You Tried...</span></p>
+<br>
+<a><span style="color:black;"> ♦ </span></a>
+<p><span style="color:yellow; font-size: 35px;"> ♦ ENLIGHTENED ZONE ♦ </span> </p>
+<p><span style="color:yellow; font-size: 32px;">26 - 50 </span><span style="font-size: 32px; color: grey;"> Questions
+        Answered Right? </span> <br> <span style="color:black; font-size: 30px;"> Not Bad Actually...</span></p>
+<br>
+<a><span style="color: black;"> ♦ </span></a>
+<p><span style="color:green; font-size: 35px;"> ♦ NATURAL - BORN WIZ ZONE ♦ </span> </p>
+<p><span style="color:green; font-size: 32px;">51 - 75</span> <span style="font-size: 32px; color: grey;"> Questions
+        Answered Right? </span> <br> <span style="color:black; font-size: 30px;"> You're A Natural...</span></p>
+<br><br>
+<hr>
+<br>
+<h3 style="font-size: 40px;">What About Random Movie Scenes?</h3>
+<p style="color: grey;">Try to Guess The Movie Title Based Off These 50 Iconic Scenes</p>
+<br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 1</span></a><br><br><br>
+<img src="/static/forestgump.gif" alt="man running gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 2</span></a><br><br><br>
+<img src="/static/shark.gif" alt="men talking" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 3</span></a><br><br><br>
+<img src="/static/perks-of-being-a-wallflower.gif" alt="man riding on top of truck gif"
+    width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 4</span></a><br><br><br>
+<img src="/static/joker.gif" alt="joker gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 5</span></a><br><br><br>
+<img src="/static/changeling.gif" alt="woman and child gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 6</span></a><br><br><br>
+<img src="/static/thisboy.gif" alt="boy walking gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 7</span></a><br><br><br>
+<img src="/static/its-a-wonderful-life-christmas-bell.gif" alt="family gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 8</span></a><br><br><br>
+<img src="/static/silent.gif" alt="man with dog gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 9</span></a><br><br><br>
+<img src="/static/8.webp" alt="man" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 10</span></a><br><br><br>
+<img src="/static/breakfast.gif" alt="girl dancing gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 11</span></a><br><br><br>
+<img src="/static/django.webp" alt="man smiling gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 12</span></a><br><br><br>
+<img src="/static/silver.gif" alt="woman scowling gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 13</span></a><br><br><br>
+<img src="/static/freezing-the-shining.gif" alt="man freezing gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 14</span></a><br><br><br>
+<img src="/static/insane.gif" alt="man talking gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 15</span></a><br><br><br>
+<img src="/static/tired.gif" alt="man talking gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 16</span></a><br><br><br>
+<img src="/static/confused.gif" alt="man confused gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 17</span></a><br><br><br>
+<img src="/static/jason-clarke-zero-dark-thirty.gif" alt="man talking gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 18</span></a><br><br><br>
+<img src="/static/argo.gif" alt="man smiling gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 19</span></a><br><br><br>
+<img src="/static/hurt-locker.gif" alt="man walking gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 20</span></a><br><br><br>
+<img src="/static/offer.gif" alt="man talking gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 21</span></a><br><br><br>
+<img src="/static/the-town-ben-affleck.gif" alt="people standing around gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 22</span></a><br><br><br>
+<img src="/static/depart.webp" alt="men talking gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 23</span></a><br><br><br>
+<img src="/static/scream.webp" alt="man holding knife gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 24</span></a><br><br><br>
+<img src="/static/type.gif" alt="woman talking gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 25</span></a><br><br><br>
+<img src="/static/gilbert-grape.gif" alt="boy gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 26</span></a><br><br><br>
+<img src="/static/lost.gif" alt="man befriending woman gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 27</span></a><br><br><br>
+<img src="/static/scary-ed-warren.gif" alt="man scared gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 28</span></a><br><br><br>
+<img src="/static/juno-fingernails.gif" alt="girl talking gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 29</span></a><br><br><br>
+<img src="/static/hate.gif" alt="boy crying gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 30</span></a><br><br><br>
+<img src="/static/wait.gif" alt="man sitting gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 31</span></a><br><br><br>
+<img src="/static/HiddenCluelessHummingbird.webp" alt="children hugging" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 32</span></a><br><br><br>
+<img src="/static/jake-gyllenhaal-laughing.gif" alt="man laughing gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 33</span></a><br><br><br>
+<img src="/static/lookingfor.gif" alt="woman holding knife gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 34</span></a><br><br><br>
+<img src="/static/fight.gif" alt="man talking gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 35</span></a><br><br><br>
+<img src="/static/nope.gif" alt="men looking gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 36</span></a><br><br><br>
+<img src="/static/aintdancing.gif" alt="man sitting gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 37</span></a><br><br><br>
+<img src="/static/dontknow.gif" alt="woman crying gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 38</span></a><br><br><br>
+<img src="/static/taxi.gif" alt="man clapping gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 39</span></a><br><br><br>
+<img src="/static/no ammo.gif" alt="men throwing hats gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 40</span></a><br><br><br>
+<img src="/static/spin.gif" alt="woman spinning gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 41</span></a><br><br><br>
+<img src="/static/crazytimes.gif" alt="man running gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 42</span></a><br><br><br>
+<img src="/static/boogie.gif" alt="men dancing gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 43</span></a><br><br><br>
+<img src="/static/shave.gif" alt="man shaving head gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 44</span></a><br><br><br>
+<img src="/static/square.gif" alt="woman smoking gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 45</span></a><br><br><br>
+<img src="/static/blooddiamond.gif" alt="man talking on phone gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 46</span></a><br><br><br>
+<img src="/static/truth.gif" alt="man talking gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 47</span></a><br><br><br>
+<img src="/static/gladiator.gif" alt="man yelling gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 48</span></a><br><br><br>
+<img src="/static/smirk.gif" alt="man smirking gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 49</span></a><br><br><br>
+<img src="/static/concerned.webp" alt="cop speaking to women gif" width="700" /><br><br><br><br><br><br>
+<a style="font-size: 30px;"> ♦ <span style="color: black;"> Mystery Movie Scene 50</span></a><br><br><br>
+<img src="/static/basketball.webp" alt="men running around basketball court gif" width="700" /><br><br><br><br><br><br>
+<hr>
+<h5 style="font-size: 40px;">Here are the Correct Answers to These 50 Iconic Movie Scenes</h5>
+<a style="font-size: 27px;"> ♢ <span style="color: black;">Movie Scene 1: Forest Gump (1994)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;">Movie Scene 2: The Shawshank Redemption (1994)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;">Movie Scene 3: The Perks of Being a Wallflower
+        (2012)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;">Movie Scene 4: The Dark Knight (2008)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 5: Changeling (2008)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 6: This Boy's Life (1993)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 7: It's a Wonderful Life (1946)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 8: The Silence of the Lambs (1991)p</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 9: 8 Mile (2002)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 10: The Breakfast Club (1985)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 11: Django Unchained (2012)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 12: Silver Linings Playbook (2012)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 13: The Shining (1980)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 14: Se7en (1995)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 15: American Beauty (1999)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 16: Pulp Fiction (1994)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 17: Zero Dark Thirty (2012)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 18: Argo (2012)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 19: The Hurt Locker (2008)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 20: The Godfather (1972)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 21: The Town (2010)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 22: The Departed (2006)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 23: Scream (1996)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 24: Up in the Air (I) (2009</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 25: What's Eating Gilbert Grape
+        (1993)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 26: Lost in Translation (2003)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 27: The Conjuring (2013)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 28: Juno (2007)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 29: Stand by Me (1986)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 30: The Green Mile (1999)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 31: Super 8 (2011)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 32: Jarhead (2005)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 33: Misery (1990)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 34: Fight Club (1999)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 35: Shutter Island (2010)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 36: Lawless (2012)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 37: Winter's Bone (2010)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 38: Taxi Driver (1976)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 39: Saving Private Ryan (1998)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 40: Black Swan (2010)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 41: Inception (2010)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 42: Boogie Nights (1997)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 43: 50/50 (2011)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 44: Brothers (I) (2009)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 45: Blood Diamond (2006)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 46: A Few Good Men (1992)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 47: Gladiator (2000)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 48: Law Abiding Citizen (2009)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 49: Lakeview Terrace (2008)</a><br><br>
+<a style="font-size: 27px;"> ♢ <span style="color: black;"> Movie Scene 50: Glory Road (2006)</a><br><br>
+</head>
+
+</html>
