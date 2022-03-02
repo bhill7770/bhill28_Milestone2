@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  {% with messages = get_flashed_messages() %}
+  {% if messages %}
+  {% for msg in messages %}
+  <p><span style="color: grey;">{{msg}}</span></p>
+  {% endfor%}
+  {% endif %}
+  {% endwith %}
+
+  <style>
+    .topnav {
+      overflow: hidden;
+      background-color: #333;
+    }
+
+    .topnav a {
+      float: left;
+      color: #f2f2f2;
+      text-align: center;
+      padding: 23px 20px;
+      text-decoration: none;
+      font-size: 25px;
+      font-family: cursive;
+    }
+
+    .topnav a:hover {
+      background-color: #ddd;
+      color: black;
+    }
+
+    .topnav a.active {
+      color: white;
+    }
+
+    img.avatar {
+      border: 5px solid black;
+      position: relative;
+    }
+  </style>
+  <header class="site-header">
+    <nav class="topnav">
+      <div class="container">
+        <div class="navbar-nav mr-auto">
+          <a class="nav-item nav-link" href="/">Home </a>
+          <a class="nav-item nav-link" href="/search">Search</a>
+        </div>
+        <!-- Navbar Right Side -->
+        <div class="navbar-nav">
+          <a class="nav-item nav-link" href="/login">Login</a>
+          <a class="nav-item nav-link" href="/register">Register</a>
+          <a class="nav-item nav-link" href="/trivia">Trivia</a>
+          <a class="nav-item nav-link" href="/trailers">Trailers</a>
+          <a class="nav-item nav-link" href="/logout">Logout</a>
+        </div>
+      </div>
+      </div>
+    </nav>
+  </header>
+  </style>
+  <style>
+    body {
+      background-color: lightgray;
+      text-align: center;
+      font-size: 25px;
+      color: rgb(199, 158, 172);
+      -webkit-text-stroke: 0.9px black;
+    }
+  </style>
+  <h1 style="font-size: 200;">Watch These Upcoming Movie Trailers</h1>
+  <br>
+  <img src="/static/trailericon.jpeg" alt="movie icon" class="avatar" width="300px"><br><br>
+  <a><span style="color:grey; font-size: 30px;">Below is a list of some of the most anticipated upcoming
+      movies...</span></a><br>
+  <a><span style="color:black">Check them out!</span></a><br><br>
+  <br><br><br><br><br><br><br><br><br><br>
+
+<body>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #1 - GOLD Official Trailer (2022) <br> - Thriller - </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/1HqBaI-FV7Y" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #2 - THE CONTRACTOR Official Trailer (2022) <br>- Horror - </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/e7glvM8Xh0w" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #3 - ASH & DUST Official Trailer (2022) <br>- Myster, Thriller -
+  </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/MeIxTXnw36k" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #4 - FANATASTIC BEASTS: THE SECRECTS OF DUMBLEDORE Official Trailer
+    (2022) <br>- Fantasy, Action - </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/Y9dr2zw-TXQ" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #5 - DOWNTOWN ABBEY: A NEW ERA Movie Official Trailer (2022) <br> -
+    Historical Drama - </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/wN0Spmq610Q" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #6 - THE FIRESTARTER Official Trailer (2022) <br> - Horror,
+    Adaptation - </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/59MJfJPP5eo" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #7 - THE LOST CITY Official Trailer (2022) <br> - Romantic Comedy -
+  </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/nfKO9rYDmE8" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #8 - AVATAR 2 Official Trailer (2022) <br> - Action,
+    Sci-Fi, Adventure - </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/MknKGdvuYKo" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #9 - THE BLACK LIGHT Official Trailer (2022) <br> - Action,
+    Adventure, Mystery - </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/uPlCr1FFTZI" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #10 - MOONFALL Official Trailer (2022) <br> - Sci-Fi, Action - </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/ivIwdQBlS10" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #11 - THE NORTHMAN Official Trailer (2022) <br> - Action,
+    Adventure, Historical Drama - </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/oMSdFM12hOw" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #12 - DEATH ON THE NILE Official Trailer (2022) <br> - Mystery,
+    Drama, Thriller, Crime - </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/dZRqB0JLizw" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #13 - SCREAM Official Trailer (2022) <br> - Horror - </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/beToTslH17s" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #14 - THE BAD GUYS Official Trailer (2022) <br> - Comedy,
+    Animation, Family - </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/M60Gu2SLJ3A" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #15 - YOU WON'T BE ALONE Official Trailer (2022) <br> - Thriller -
+  </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/6-G39n2sCVU" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #16 - SONIC THE HEDGEHOG 2 Official Trailer (2022) <br> -
+    Animation, Family, Action, Adventure - </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/G5kzUpWAusI" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #17 - OPERATION FORTUNE: RUSE DE GUERRE Official Trailer (2022)
+    <br> - Action, Mystery, Thriller -
+  </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/W8Sqk1GcqxY" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #18 - JURASSIC WORLD DOMINATION Official Trailer (2022) <br> -
+    Action, Sci-Fi, Adventure - </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/fb5ELWi-ekk" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #19 - THOR: LOVE AND THUNDER Official Trailer(2022) <br> - Fantasy,
+    Adventure - </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/GczWEacU9uc" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+  <p style="font-size: 30px; color: black;"> ♢ Movie #20 - LIGHTYEAR Official Trailer (2022) <br> - Fantasy, Family,
+    Animation -
+  </p>
+  <iframe width="880" height="480" src="https://www.youtube.com/embed/BwZs3H_UN3k" title="YouTube video player"
+    frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+    allowfullscreen></iframe>
+  <br><br><br><br><br><br><br><br><br>
+
+
+
+
+</body>
+
+</html>
